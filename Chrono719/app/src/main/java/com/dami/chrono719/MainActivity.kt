@@ -52,10 +52,13 @@ class MainActivity : AppCompatActivity() {
         //날짜 설정 라디오 버튼 눌렀을 때 데이트 피커 보이게 설정
         rdoDate.setOnClickListener{
             dPiker.visibility = View.VISIBLE
+            tPicker.visibility = View.INVISIBLE
         }
         // 시간 설정 라디오 버튼 눌렀을 때 타임피커 보이게 설정
         rdoTime.setOnClickListener{
             tPicker.visibility = View.VISIBLE
+            dPiker.visibility = View.INVISIBLE
+
         }
 
         // 데이트 피커에서 날짜가 설정 되었을 때
