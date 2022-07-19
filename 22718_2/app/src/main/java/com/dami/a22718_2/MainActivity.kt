@@ -16,6 +16,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var img:ImageView
     lateinit var finishBtn:Button
     lateinit var restartBtn:Button
+    lateinit var btngroup:LinearLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,14 +31,15 @@ class MainActivity : AppCompatActivity() {
         img = findViewById(R.id.img)
         finishBtn =findViewById(R.id.finishBtn)
         restartBtn = findViewById(R.id.restartBtn)
+        btngroup = findViewById(R.id.btngroup)
 
         selectBtn.setOnCheckedChangeListener{v,b->
         if(selectBtn.isChecked==true) {
             text.visibility = View.VISIBLE
             radioGroup.visibility = View.VISIBLE
             img.visibility = View.VISIBLE
-            finishBtn.visibility = View.VISIBLE
-            restartBtn.visibility = View.VISIBLE
+            btngroup.visibility = View.VISIBLE
+
 
                 radiobtn1.setOnClickListener{
                     img.setImageResource(R.drawable.oreo) }
@@ -51,8 +53,8 @@ class MainActivity : AppCompatActivity() {
             text.visibility = View.INVISIBLE
             radioGroup.visibility = View.INVISIBLE
             img.visibility = View.INVISIBLE
-            finishBtn.visibility = View.INVISIBLE
-            restartBtn.visibility = View.INVISIBLE}}
+            btngroup.visibility = View.INVISIBLE
+           }}
 
 
 
@@ -69,8 +71,8 @@ class MainActivity : AppCompatActivity() {
                 radiobtn2.isChecked=false
                 radiobtn3.isChecked=false
                 img.setImageResource(0)
-                finishBtn.visibility = View.INVISIBLE
-                restartBtn.visibility = View.INVISIBLE
+                btngroup.visibility = View.INVISIBLE
+
             }
 
      false   }}

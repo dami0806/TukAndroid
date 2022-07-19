@@ -66,18 +66,28 @@
         android:visibility="invisible"
 
     />
+            <LinearLayout
+                android:id="@+id/btngroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="invisible"
+                android:padding="10dp">
     <Button
         android:id="@+id/finishBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="종료"
-        android:visibility="invisible"/>
+        android:layout_margin="10dp"
+        />
     <Button
         android:id="@+id/restartBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="처음으로"
-        android:visibility="invisible"/>
+        android:layout_margin="10dp"
+        />
+            </LinearLayout>
 
 
 
