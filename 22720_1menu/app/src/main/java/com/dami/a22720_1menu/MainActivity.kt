@@ -5,18 +5,22 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Button
-import android.widget.LinearLayout
-import com.google.android.material.internal.BaselineLayout
+import android.widget.*
 
 class MainActivity : AppCompatActivity() {
-    lateinit var baseLayout: LinearLayout
-    lateinit var button1:Button
+
+
+    lateinit var img :ImageView
+    lateinit var et:EditText
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-    baseLayout = findViewById<LinearLayout>(R.id.baseLayout)
-    button1 = findViewById<Button>(R.id.btn)
+
+
+       setContentView(R.layout.activity_main)
+
+        img = findViewById(R.id.img)
+        et = findViewById(R.id.et)
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -28,21 +32,27 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
-            R.id.itemRed ->{
-                baseLayout.setBackgroundColor(Color.RED)
+            R.id.item1->{
+                item.isChecked =true
+                img.setImageResource(R.drawable.img1)
             }
-            R.id.itemBlue ->{
-                baseLayout.setBackgroundColor(Color.BLUE)
+            R.id.item2 ->{
+                item.isChecked =true
+                img.setImageResource(R.drawable.img2)
             }
-            R.id.itemGreen ->{
-                baseLayout.setBackgroundColor(Color.GREEN)
+            R.id.item3 ->{
+                item.isChecked =true
+                img.setImageResource(R.drawable.img3)
             }
-            R.id.subRotate ->{
-                button1.rotation+= 45f
+            R.id.rotate ->{
+                if(et.text.toString()==""){
+                    Toast.makeText(this,"각도를 먼저입력하세요",Toast.LENGTH_SHORT).show()
+                }else {
+                    var value = et.text.toString().toFloat()
+                    img.rotation = value
+                }
             }
-            R.id.subSize ->{
-                button1.scaleX *=2f// 크기 지정할때 scale
-            }
+
 
         }
         return false
