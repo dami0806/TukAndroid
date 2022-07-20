@@ -38,10 +38,10 @@ class MainActivity : AppCompatActivity() {
                 baseLayout.setBackgroundColor(Color.GREEN)
             }
             R.id.subRotate ->{
-                button1.rotation = 45f
+                button1.rotation+= 45f
             }
             R.id.subSize ->{
-                button1.scaleX =2f// 크기 지정할때 scale
+                button1.scaleX *=2f// 크기 지정할때 scale
             }
 
         }
